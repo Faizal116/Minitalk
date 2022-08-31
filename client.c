@@ -56,9 +56,14 @@ int	main(int ac, char **av)
 {
 	struct sigaction	waffle_sig;
 
-	if (ac == 2)
+	if (ac == 2 || !*av[2])
 	{
-		ft_putstr_fd("Maybe enter a message?", 1);
+		ft_putstr_fd("Maybe enter a message?\n", 1);
+		exit (EXIT_FAILURE);
+	}
+	else if (ac < 2)
+	{
+		ft_putstr_fd("Error Error Error\n", 1);
 		exit (EXIT_FAILURE);
 	}
 	else if (ac == 3)
